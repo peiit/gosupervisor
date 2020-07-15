@@ -1,14 +1,31 @@
 package main
 
 import (
-	"github.com/foolin/gosupervisor"
+	"github.com/peiit/gosupervisor"
 	"log"
+	"net/http"
 	"time"
 )
 
+type Transport struct {
+	next http.RoundTripper
+}
+
+func (it *Transport) RoundTrip(req *http.Request) (*http.Response, error) {
+	req.SetBasicAuth("nmq","nmq@123")
+	resp, err := it.next.RoundTrip(req)
+	return resp, err
+}
+
 func main(){
 	rpcUrl := "http://127.0.0.1:9001/RPC2"
-	rpc := gosupervisor.New(rpcUrl)
+	rpc := gosupervisor.New(rpcUrl, nil)
+
+	//for Basic Auth
+	//tr := &Transport{
+	//	next: http.DefaultTransport,
+	//}
+	//rpc, _ := xmlrpc.NewClient(rpcUrl, tr)
 
 	version, err := rpc.GetAPIVersion()
 	println("GetAPIVersion")

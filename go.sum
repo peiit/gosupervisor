@@ -1,0 +1,7 @@
+github.com/foolin/gomap v0.0.0-20160918073925-64245a4fea67 h1:i9apfSyWV8dYiDCSN71QYaPBe4KvQF6HhRdSoM8wSZc=
+github.com/foolin/gomap v0.0.0-20160918073925-64245a4fea67/go.mod h1:K9FO4ZPK0+xgNChh5WB6R8My1msG8TaYIYTbvjt8ePI=
+github.com/kolo/xmlrpc v0.0.0-20150413191830-0826b98aaa29 h1:A9Cxbd2chMbJwYR6WpWelyovi0v8Pv4xTUc64pO1gxE=
+github.com/kolo/xmlrpc v0.0.0-20150413191830-0826b98aaa29/go.mod h1:o03bZfuBwAXHetKXuInt4S7omeXUu62/A845kiycsSQ=
+golang.org/x/text v0.3.3 h1:cokOdA+Jmi5PJGXLlLllQSgYigAEfHXJAERHVMaCc2k=
+golang.org/x/text v0.3.3/go.mod h1:5Zoc/QRtKVWzQhOtBMvqHzDpF6irO9z98xDceosuGiQ=
+golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod h1:n7NCudcB/nEzxVGmLbDWY5pfWTLqBcC2KZ6jyYvM4mQ=

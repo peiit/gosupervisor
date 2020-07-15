@@ -1,8 +1,10 @@
-golang client for the supervisord(http://www.supervisord.org/api.html) XML-RPC interface
+golang client base of [github.com/foolin/gosupervisor](https://github.com/foolin/gosupervisor) for the supervisord(http://www.supervisord.org/api.html) XML-RPC interface
+
+Support Http Auth 
 
 # Getting started
 
-    go get github.com/foolin/gosupervisor
+    go get github.com/peiit/gosupervisor
 
 # Supervisor configuration
 /etc/supervisord.conf
@@ -16,14 +18,21 @@ port=127.0.0.1:9001
 ```go
 
     import (
-        "github.com/foolin/gosupervisor"
+        "github.com/peiit/gosupervisor"
         "log"
         "time"
     )
     
     func main(){
         rpcUrl := "http://127.0.0.1:9001/RPC2"
-        rpc := gosupervisor.New(rpcUrl)
+        rpc := gosupervisor.New(rpcUrl, nil)
+
+        //for Basic Auth
+        //tr := &Transport{
+        //	next: http.DefaultTransport,
+        //}
+        //rpc, _ := xmlrpc.NewClient(rpcUrl, tr)
+
     
         version, err := rpc.GetAPIVersion()
         println("GetAPIVersion")
